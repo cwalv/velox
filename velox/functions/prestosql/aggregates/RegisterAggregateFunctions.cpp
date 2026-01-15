@@ -19,6 +19,7 @@
 #include "velox/functions/prestosql/aggregates/ApproxPercentileAggregate.h"
 #include "velox/functions/prestosql/aggregates/ArbitraryAggregate.h"
 #include "velox/functions/prestosql/aggregates/ArrayAggAggregate.h"
+#include "velox/functions/prestosql/aggregates/ArrayUnionSumAggregate.h"
 #include "velox/functions/prestosql/aggregates/AverageAggregate.h"
 #include "velox/functions/prestosql/aggregates/BitwiseAggregates.h"
 #include "velox/functions/prestosql/aggregates/BitwiseXorAggregate.h"
@@ -237,6 +238,7 @@ void registerAllAggregateFunctions(
   registerQDigestAggAggregate(prefix, overwrite);
   registerArbitraryAggregate(prefix, withCompanionFunctions, overwrite);
   registerArrayAggAggregate(prefix, withCompanionFunctions, overwrite);
+  registerArrayUnionSumAggregate(prefix, withCompanionFunctions, overwrite);
   registerAverageAggregate(prefix, withCompanionFunctions, overwrite);
   registerBitwiseAggregates(
       prefix, withCompanionFunctions, onlyPrestoSignatures, overwrite);
